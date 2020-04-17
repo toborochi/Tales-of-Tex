@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{substr}
+\usepackage{arrayjob}
+
+
+% macro for each position
+\def\q{.} \def\w{.} \def\e{.}
+\def\a{.} \def\s{.} \def\d{.}
+\def\z{.} \def\x{.} \def\c{.}
+% string separator
+\def\P{\newline}
+% toggle for finished game
+\newif\ifinprogress
+\inprogresstrue
+\newcommand\checkboard{
+    % print board to terminal
+    \typeout{________________________________________}
+    \typeout{|======================================|}
+    \typeout{|. . . . . . . .  . . . . . . . . . . . |}
+    \typeout{|. . . . .____ .____.____. . . . . . . |}
+    \typeout{|. . . . . .|ales  of   :|eX. . . . . . . |}
+	\typeout{|. . . . . . . .  . . . . . . . . . . . |}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:._._.:.:.:.|}
+    \typeout{|:.:.:.:._.:.:.:.:.:.:.:_._.( ' ):.:.:.|}
+    \typeout{|:.:.:.:( ')_:.:.:.:.:.(_________).:.:.|}
+    \typeout{|:.:.:.(_____).:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:o .:.|}
+    \typeout{|:.:.:.:.:.:.[PRESS ENTER].:.:.:./|\ .:|}
+    \typeout{|:::_____::::::::::::::::::::::::/ \ ::|}
+    \typeout{|: /_'_'/\ ::::::_|_:::::::::::________|}
+    \typeout{|:/____/__\ ::::::|:::::::::::/________|}
+    \typeout{|:|[][]||||::::::[ ]:::::::::/_________|}
+    \typeout{|===========================/__________|}
+    \typeout{|.............Vlada(2020)..............|}	
+}
+
+\newcommand\nextmovex{
+	
+    \checkboard
+	\typein[\continue]{}
+	
+	\nextmovex
+
+}
+\newcommand\nextmoveo{
+    \typein[\move]{next move O (qwe/asd/zxc)?}
+	%
+    \checkboard
+}
+% start with player X
+\nextmovex
+\begin{document}
+
+\newcounter{index}
+\setcounter{index}{2}
+
+\csname ary\the\value{.} \endcsname
+
+
+\noindent\texttt{\boardprint}
+\end{document}
