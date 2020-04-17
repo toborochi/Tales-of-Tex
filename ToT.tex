@@ -1,22 +1,18 @@
-% Tales of Tex 
+% Tales of Tex a game prototype by Leonardo Anez Vladimirovna (2020)
+% Based on: https://tex.stackexchange.com/questions/383292/all-uses-of-latex-i-never-use-latex-except-for/383314#383314
 
 \documentclass{article}
-\usepackage{substr}
-\usepackage{arrayjob}
 
-
-% string separator
-\def\P{\newline}
-% toggle for finished game
 \newif\ifinprogress
 \inprogresstrue
-\newcommand\checkboard{
+\newcommand\intro{
     % print intro to terminal
     \typeout{________________________________________}
     \typeout{|======================================|}
     \typeout{|. . . . . . . .  . . . . . . . . . . . |}
     \typeout{|. . . . .____ .____.____. . . . . . . |}
     \typeout{|. . . . . .|ales  of   :|eX. . . . . . . |}
+	\typeout{|. . . . . . . .  . . . . . . . . . . . |}
 	\typeout{|. . . . . . . .  . . . . . . . . . . . |}
     \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:._._.:.:.:.|}
     \typeout{|:.:.:.:._.:.:.:.:.:.:.:_._.( ' ):.:.:.|}
@@ -29,31 +25,289 @@
     \typeout{|:/____/__\ ::::::|:::::::::::/________|}
     \typeout{|:|[][]||||::::::[ ]:::::::::/_________|}
     \typeout{|===========================/__________|}
+    \typeout{|......................................|}
     \typeout{|.............Vlada(2020)..............|}	
 }
 
-\newcommand\nextmovex{
+\newcommand\introII{
+    % print intro2 to terminal
+    \typeout{________________________________________}
+    \typeout{|======================================|}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|.. .Welcome to the kingdom of Tex,. . |}
+	\typeout{|. .a place in constant war between. . |}
+    \typeout{|:.:.:.:.:.humans and fairies:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:. .:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.: |______________:.:.:.:.:|}
+    \typeout{|:.:.:.:[======|______________> .:.:.:.|}
+    \typeout{|::::::::::::: | . . . . . . .:::::::::|}
+	\typeout{|::::::::::::: ' ::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+    \typeout{|::::::::::::::::::::::::::::::::::::::|}
+    \typeout{|............[PRESS ENTER].............|}	
 	
-    \checkboard
+}
+
+\newcommand\introIII{
+
+    % print intro2 to terminal
+    \typeout{________________________________________}
+    \typeout{|======================================|}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{| A war for control of the "Mathbfle". |}
+	\typeout{|. . . .a force so powerful that . . . |}
+    \typeout{|:.:.:whoever possesses it would.:.:.:.|}
+    \typeout{|:.:.:.:.:.:rule both sides:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:. .:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.: |______________:.:.:.:.:|}
+    \typeout{|:.:.:.:[======|______________> .:.:.:.|}
+    \typeout{|::::::::::::: | . . . . . . .:::::::::|}
+	\typeout{|::::::::::::: ' ::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+    \typeout{|::::::::::::::::::::::::::::::::::::::|}
+    \typeout{|............[PRESS ENTER].............|}	
+	
+}
+
+
+\newcommand\introIV{
+
+    % print intro2 to terminal
+    \typeout{________________________________________}
+    \typeout{|======================================|}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . You were teleported through. . . .|}
+	\typeout{|. . .a portal to this universe. . . . |}
+    \typeout{|:.: To bring peace to the kingdom.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:. .:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.: |______________:.:.:.:.:|}
+    \typeout{|:.:.:.:[======|______________> .:.:.:.|}
+    \typeout{|::::::::::::: | . . . . . . .:::::::::|}
+	\typeout{|::::::::::::: ' ::::::::::::::::::::::|}
+	\typeout{|::::::::::::: ' ::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+    \typeout{|::::::::::::::::::::::::::::::::::::::|}
+    \typeout{|............[PRESS ENTER].............|}	
+
+}
+
+\newcommand\introV{
+
+    % print intro2 to terminal
+    \typeout{________________________________________}
+    \typeout{|======================================|}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|+====================================+|}
+	\typeout{|o Where I am?. . . . . . . . . . . . .|}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+    \typeout{|============[PRESS ENTER]=============|}	
+
+}
+
+\newcommand\introVI{
+
+    % print intro2 to terminal
+    \typeout{________________________________________}
+    \typeout{|======================================|}
+	\typeout{|. . . . . . . . .sSSSs . . . . . . . .|}
+	\typeout{|. . . . . . . . SSSSSSS . . . . . . . |}
+	\typeout{|. . . . . . . . SSSSSSS . . . . . . . |}
+	\typeout{|. . . . . . . . .SSSSS . . . . . . . .|}
+    \typeout{|:.:.:.:.:.:.: .--'SSS---:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.: /. . SS. .\.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:../ |. . . .| \.:.:.:.:.:.:|}
+    \typeout{|:.:.:.:.:.: / / \ .:. / \ \.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:( (. .) : (. .) ).:.:.:.:.:|}
+	\typeout{|:::::::::.: \ \ /. . .\ / /:::::::::::|}
+	\typeout{|:::::::::.:.`\./___.___\/`_____:::::::|}
+	\typeout{|:::::::::: /--;. . . . .;-----/:::::::|}
+	\typeout{|::::::::: /____'.__|__.'_____/ ::: ???|}
+	\typeout{|+====================================+|}
+	\typeout{|o I thought you would never get up . .|}
+	\typeout{|. Are you okay? . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+    \typeout{|============[PRESS ENTER]=============|}	
+
+}
+
+
+\newcommand\introVII{
+
+    % print intro2 to terminal
+    \typeout{________________________________________}
+    \typeout{|======================================|}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|::::::::::::::::::::::::::::::::::::::|}
+	\typeout{|+====================================+|}
+	\typeout{|o Who are you? . . . . . . . . . . . .|}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+    \typeout{|============[PRESS ENTER]=============|}	
+
+}
+
+\newcommand\introVIII{
+
+    % print intro2 to terminal
+    \typeout{________________________________________}
+    \typeout{|======================================|}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+	\typeout{|. . . . . . . . . . . . . . . . . . . |}
+    \typeout{|:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.|}
+	\typeout{|:.:.:.:.:.:.:. sSSSss :.:.:.:.:.:.:.:.|}
+	\typeout{|:.:.:.:.:.:.: sS^,^|ss :.:.:.:.:.:.:.:|}
+	\typeout{|:.:.:.:.:.:.: SS\-/SSS .:.:.:.:.:.:.:.|}
+    \typeout{|:.:.:.:.:.:.: Ss| |SSS .:.:.:.:.:.:.:.|}
+	\typeout{|:::::::::::: /|-----SS .::::::::::::::|}
+	\typeout{|::::::::::::| (. |. )s| ::::::::::::::|}
+	\typeout{|::::::::::::| |-----| | ::::::::::::::|}
+	\typeout{|::::::::::::| |_____|_| :::::::::: Lua|}
+	\typeout{|+====================================+|}
+	\typeout{|o Im Lua-chan! I found you lying in. .|}
+	\typeout{|the bushes,You fell from the sky. . . |}
+	\typeout{|Whats your name? . . . . . . . . . . .|}
+    \typeout{|============[PRESS ENTER]=============|}	
+
+}
+
+
+\newcommand\nextmove{
+	
+    \intro
 	\typein[\continue]{}
 	
-	\nextmovex
+	\nextmoveII
 
 }
-\newcommand\nextmoveo{
-    \typein[\move]{next move O (qwe/asd/zxc)?}
-	%
-    \checkboard
+
+
+\newcommand\nextmoveII{
+	
+    \introII
+	\typein[\continue]{}
+	
+	\nextmoveIII
+
 }
+
+\newcommand\nextmoveIII{
+	
+    \introIII
+	\typein[\continue]{}
+	
+	\nextmoveIV
+}
+
+
+\newcommand\nextmoveIV{
+	
+    \introIV
+	\typein[\continue]{}
+	
+	\nextmoveV
+
+}
+
+
+
+\newcommand\nextmoveV{
+	\introV
+	\typein[\continue]{}
+	
+	\nextmoveVI
+
+}
+
+\newcommand\nextmoveVI{
+	\introVI
+	\typein[\continue]{}
+	
+	\nextmoveVII
+
+}
+
+\newcommand\nextmoveVII{
+	\introVII
+	\typein[\continue]{}
+	
+	\nextmoveVIII
+
+}
+
+
+\newcommand\nextmoveVIII{
+	\introVIII
+	\typein[\continue]{}
+	
+	\nextmoveIX
+
+}
+
+\newcommand\nextmoveIX{
+	
+	\typein[\name]{Im: }
+	
+	\inprogressfalse
+
+}
+
+
+
 % start the game
-\nextmovex
+\nextmove
 \begin{document}
+This is the story of \name, a human who ended up in the Kingdom of TeX. His/Her mission is to bring peace to humans and fairies by stopping the war.
+You met Lua-Chan, a girl who rescued you after you appeared in that Kingdom. And since then you have embarked on an adventure in search of the "Mathbfle".
+\\
+That is all. Someday someone will continue this adventure. And that can be you.
 
-\newcounter{index}
-\setcounter{index}{2}
-
-\csname ary\the\value{.} \endcsname
+\begin{center}
 
 
-\noindent\texttt{\boardprint}
+Thanks for playing. \\
+Leonardo H. Anez Vladimirovna
+\end{center}
+
 \end{document}
