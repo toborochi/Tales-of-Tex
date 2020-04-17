@@ -1,19 +1,17 @@
+% Tales of Tex 
+
 \documentclass{article}
 \usepackage{substr}
 \usepackage{arrayjob}
 
 
-% macro for each position
-\def\q{.} \def\w{.} \def\e{.}
-\def\a{.} \def\s{.} \def\d{.}
-\def\z{.} \def\x{.} \def\c{.}
 % string separator
 \def\P{\newline}
 % toggle for finished game
 \newif\ifinprogress
 \inprogresstrue
 \newcommand\checkboard{
-    % print board to terminal
+    % print intro to terminal
     \typeout{________________________________________}
     \typeout{|======================================|}
     \typeout{|. . . . . . . .  . . . . . . . . . . . |}
@@ -47,7 +45,7 @@
 	%
     \checkboard
 }
-% start with player X
+% start the game
 \nextmovex
 \begin{document}
 
