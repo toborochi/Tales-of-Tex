@@ -1,5 +1,5 @@
 # Tales of Tex
- LaTeX little game. (WIP)
+ LaTeX little game. (Prototype)
  
  <p align="center">
 <img src="https://raw.githubusercontent.com/toborochi/Tales-of-Tex/master/screenshot.png" height="300px" />
